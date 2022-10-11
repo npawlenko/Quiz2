@@ -1,8 +1,33 @@
-• Po pierwszym uruchomieniu aplikacji - onCreate(), onStart(), onResume()
-• Po wciśnięciu przycisku Cofnij - onPause(), onStop(), onDestroy()
-• Po ponownym uruchomieniu aplikacji - onCreate(), onStart(), onResume()
-• Po wciśnięciu przycisku ekranu głównego Home - onPause(), onStop()
-• Po powrocie do aplikacji z listy ostatnio używanych aplikacji - onStart(), onResume()
+https://github.com/npawlenko/Quiz2
 
-Rotacja - onPause(), onStop(), onDestroy(), onCreate(), onStart(), onResume()
-Wyświetla się pierwsze pytanie, nie to co było przed obróceniem
+6.
+Po pierwszym uruchomieniu aplikacji zostały wywołane metody onCreate(), onStart(), onResume()
+Po wciśnięciu przycisku Cofnij zostały wywołane metody  onPause(), onStop(), onDestroy()
+Po ponownym uruchomieniu aplikacji zostały wywołane metody  onCreate(), onStart(), onResume()
+Po wciśnięciu przycisku ekranu głównego Home zostały wywołane metody  onPause(), onStop()
+Po powrocie do aplikacji z listy ostatnio używanych aplikacji zostały wywołane metody  onStart(), onResume()
+
+10.
+2022-10-11 13:51:35.004 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onPause()
+2022-10-11 13:51:35.019 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onStop()
+2022-10-11 13:51:35.022 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onDestroy()
+2022-10-11 13:51:35.181 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onCreate()
+2022-10-11 13:51:35.211 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onStart()
+2022-10-11 13:51:35.212 5075-5075/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onResume()
+Po obróceniu ekranu, zawsze wyświetla się pierwsze pytanie.
+Analizując logi, aplikacja jest niszczona, a następnie uruchamiana na nowo.
+
+
+13.
+2022-10-11 13:52:32.997 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onCreate()
+2022-10-11 13:52:33.000 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onStart()
+2022-10-11 13:52:33.001 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onResume()
+2022-10-11 13:52:39.877 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onPause()
+2022-10-11 13:52:39.879 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onStop()
+2022-10-11 13:52:39.882 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onSaveInstanceState()
+2022-10-11 13:52:39.883 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onDestroy()
+2022-10-11 13:52:40.170 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onCreate()
+2022-10-11 13:52:40.174 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onStart()
+2022-10-11 13:52:40.175 5145-5145/com.np.androidzadanie1 D/Quiz: Została wywołana metoda onResume()
+Po rotacji telefonu, teraz dodatkowo wykonuje się metoda onSaveInstanceState().
+Aplikacja po ponownym uruchomieniu pamięta swój poprzedni stan i pokazuje te samo pytanie, które było wyświetlane przed rotacją.

@@ -10,6 +10,9 @@
     <string name="q_resources">Zasoby aplikacji dla systemu Android definiuje się w plikach .xml</string>
     <string name="q_find_resources">Do zasobów w aplikacji dla systemu Android odnosimy się po nazwach</string>
 
+    <string name="answer_was_shown">Odpowiedź została pokazana</string>
     <string name="correct_answer">Odpowiedź jest prawidłowa, gratulacje!</string>
     <string name="incorrect_answer">Odpowiedź jest nieprawidłowa</string>
+    <string name="show_answer">Pokaż odpowiedź</string>
+    <string name="do_show_answer">Czy na pewno chcesz zobaczyć odpowiedź?</string>
 </resources>
