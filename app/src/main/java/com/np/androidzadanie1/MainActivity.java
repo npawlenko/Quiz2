@@ -14,6 +14,7 @@ import com.np.androidzadanie1.entity.Question;
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = "Quiz";
+    public static final String KEY_CURRENT_INDEX = "currentIndex";
 
     private Button trueButton;
     private Button falseButton;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(savedInstanceState != null) {
+            currentQuestionIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
+        }
+
         trueButton = findViewById(R.id.true_button);
         falseButton = findViewById(R.id.false_button);
         nextButton = findViewById(R.id.next_button);
@@ -48,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         setNextQuestion();
 
         Log.d(LOG_TAG, "Została wywołana metoda onCreate()");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(LOG_TAG, "Została wywołana metoda onSaveInstanceState()");
+        outState.putInt(KEY_CURRENT_INDEX, currentQuestionIndex);
     }
 
     @Override
