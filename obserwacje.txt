@@ -1,0 +1,8 @@
+• Po pierwszym uruchomieniu aplikacji - onCreate(), onStart(), onResume()
+• Po wciśnięciu przycisku Cofnij - onPause(), onStop(), onDestroy()
+• Po ponownym uruchomieniu aplikacji - onCreate(), onStart(), onResume()
+• Po wciśnięciu przycisku ekranu głównego Home - onPause(), onStop()
+• Po powrocie do aplikacji z listy ostatnio używanych aplikacji - onStart(), onResume()
+
+Rotacja - onPause(), onStop(), onDestroy(), onCreate(), onStart(), onResume()
+Wyświetla się pierwsze pytanie, nie to co było przed obróceniem

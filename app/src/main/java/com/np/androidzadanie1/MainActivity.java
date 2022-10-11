@@ -3,6 +3,7 @@ package com.np.androidzadanie1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import com.np.androidzadanie1.entity.Question;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String LOG_TAG = "Quiz";
 
     private Button trueButton;
     private Button falseButton;
@@ -36,28 +39,53 @@ public class MainActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
 
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkAnswerCorrectness(true);
-            }
+        trueButton.setOnClickListener(view -> checkAnswerCorrectness(true));
+        falseButton.setOnClickListener(view -> checkAnswerCorrectness(false));
+        nextButton.setOnClickListener(view -> {
+            currentQuestionIndex = (++currentQuestionIndex) % questions.length;
+            setNextQuestion();
         });
-        falseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkAnswerCorrectness(false);
-            }
-        });
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentQuestionIndex = (++currentQuestionIndex) % questions.length;
-                setNextQuestion();
-            }
-        });
-
         setNextQuestion();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onCreate()");
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onStart()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onDestroy()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onPause()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(LOG_TAG, "Została wywołana metoda onResume()");
+    }
+
+
 
     private void checkAnswerCorrectness(boolean userAnswer) {
         boolean correctAnswer = questions[currentQuestionIndex].isTrueAnswer();
